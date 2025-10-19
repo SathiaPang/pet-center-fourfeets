@@ -16,8 +16,9 @@
   <!-- CSS output & style-->
   <link rel="stylesheet" href="./styles.css">
   <script>tailwind.config = { theme: { extend: { fontFamily: { sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'] } } } }</script>
+  <!-- JS Script-->
+  <script type="module" src="./js/authStatus.js"></script>
 </head>
-
 <body class="bg-base-100 text-base-content">
   <div class="navbar bg-base-100 shadow-sm sticky top-0 z-40">
     <div class="navbar-start">
@@ -35,10 +36,10 @@
       </ul>
     </div>
     <div class="navbar-end gap-2">
-      <div class="form-control hidden sm:block"><input type="text" placeholder="Search products..."
-          class="input input-bordered w-44 md:w-72" /></div>
       <button class="btn btn-ghost btn-circle"><span>❤️</span></button>
       <button class="btn btn-ghost btn-circle"><span>🛒</span></button>
+      <div id="auth-status" class="flex items-center gap-2">
+      </div>
     </div>
   </div>
   <!-- Hero Section -->
