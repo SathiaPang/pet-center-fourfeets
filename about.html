@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<!-- Heade -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us - 4Feets</title>
+  <link rel="icon" type="image/svg+xml" href="./assets/4Feets-Logo.svg">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.24/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+  <script>tailwind.config = { theme: { extend: { fontFamily: { sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'] } } } }</script>
+</head>
+<!-- Body -->
+<body class="bg-base-100 text-base-content">
+  <div class="navbar bg-base-100 shadow-sm sticky top-0 z-40">
+    <div class="navbar-start">
+      <a href="index.html" class="flex items-center gap-2">
+        <img src="./assets/4Feets-Logo.svg" class="h-8" alt="4Feets Logo">
+        <span class="text-lg font-semibold">4Feets</span>
+      </a>
+    </div>
+    <div class="navbar-center hidden md:flex">
+      <ul class="menu menu-horizontal px-1 font-medium">
+        <li><a href="index.html" class="">Home</a></li>
+        <li><a href="shop.html" class="">Shop</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="contact.html" class="">Contact</a></li>
+      </ul>
+    </div>
+    <div class="navbar-end gap-2">
+      <div class="form-control hidden sm:block"><input type="text" placeholder="Search products..."
+          class="input input-bordered w-44 md:w-72" /></div>
+      <button class="btn btn-ghost btn-circle"><span>❤️</span></button>
+      <button class="btn btn-ghost btn-circle"><span>🛒</span></button>
+    </div>
+  </div>
+
+  <section class="max-w-7xl mx-auto px-4 py-10 md:py-14 grid md:grid-cols-2 gap-8 items-center">
+    <div>
+      <p class="badge badge-outline">Pet Center</p>
+      <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mt-2 text-orange-500">Welcome to the 4Feets Family
+      </h1>
+      <p class=" opacity-70 mt-3 max-w-xl">We curate high‑quality food, toys, and care products for pets of all sizes.
+        Simple shopping, quick delivery, and friendly support.</p>
+      <!-- button -->
+      <a class="group relative inline-block text-sm font-bold text-orange-600 focus:ring-3 focus:outline-hidden mt-6"
+        href="./shop.html">
+        <span
+          class="absolute inset-0 translate-x-0.5 translate-y-0.5 bg-orange-600 transition-transform group-hover:translate-x-0 group-hover:translate-y-0"></span>
+        <span class="relative block border border-current bg-white px-8 py-3"> Shop Now 🛒</span>
+      </a>
+    </div>
+    <div class="relative">
+      <div class="hero-blob absolute -top-8 -right-6 w-[360px] h-[360px] md:w-[420px] md:h-[420px] -z-10"></div><img
+        class="rounded-box w-full max-w-md mx-auto drop-shadow" src="/assets/4Feets-Logo.svg" alt="hero">
+    </div>
+  </section>
+
+  <section class="max-w-7xl mx-auto px-4 py-10 md:py-14">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <p class="badge badge-ghost">Our Mission</p>
+        <h2 class="text-3xl md:text-4xl font-extrabold leading-tight mt-2">To make pets happy & owners' lives easier.
+        </h2>
+        <p class="opacity-70 mt-4 text-lg text-justify">
+          Our mission at 4Feets is simple. We believe every pet deserves the best, which is why we curate only the
+          highest-quality food, toys, and care products. We're not just a shop; we're a community of pet lovers
+          dedicated to providing simple shopping, quick delivery, and friendly support for pets of all sizes.
+        </p>
+      </div>
+      <div class="bg-base-200 p-6 rounded-box">
+        <p class="badge">Our Story</p>
+        <h2 class="text-2xl font-bold leading-tight mt-2">The shop we always wanted.</h2>
+        <p class="opacity-70 mt-3 text-justify">
+          4Feets was started by a group of friends who were tired of the confusing, over-priced world of pet supplies.
+          We just wanted one simple place to buy high-quality products for our own furry friends.
+          <br><br>
+          So, we built it. A shop that's easy to browse, stocked only with products we'd give to our own pets, and
+          backed by a support team that actually cares.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-7xl mx-auto px-4 py-10 md:py-14">
+    <div class="text-center max-w-2xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-extrabold">What We Stand For</h2>
+      <p class="opacity-70 mt-3">This is our promise to you and your best friend.</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8 mt-10">
+      <div class="card bg-base-200 shadow-sm">
+        <div class="card-body">
+          <span class="text-4xl">🏆</span>
+          <h3 class="card-title text-2xl font-bold">Quality First</h3>
+          <p class="opacity-70">Every product is vet-checked and pet-approved. If we wouldn't give it to our own pets,
+            we won't sell it to you.</p>
+        </div>
+      </div>
+      <div class="card bg-base-200 shadow-sm">
+        <div class="card-body">
+          <span class="text-4xl">🚚</span>
+          <h3 class="card-title text-2xl font-bold">Simple & Quick</h3>
+          <p class="opacity-70">No more guesswork. Our site is easy to navigate, and our delivery is fast, so you can
+            spend less time shopping.</p>
+        </div>
+      </div>
+      <div class="card bg-base-200 shadow-sm">
+        <div class="card-body">
+          <span class="text-4xl">💬</span>
+          <h3 class="card-title text-2xl font-bold">Real Support</h3>
+          <p class="opacity-70">Got a question? Our team is made up of real pet owners. We're here to help you find the
+            perfect product for your companion.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Divider -->
+  <section class="max-w-7xl mx-auto">
+    <div class="divider"></div>
+  </section>
+  <!-- Our Team Section -->
+  <section class="max-w-7xl mx-auto px-4 py-10">
+    <h2 class="text-center text-2xl md:text-6xl font-extrabold mb-8 ">Our Team</h2>
+    <div class=" grid gap-6 sm:grid-cols-2 md:grid-cols-3">
+      <!-- Card 1 -->
+      <a href="#" class="group relative block bg-black rounded-xl overflow-hidden">
+        <img alt="" src="./assets/creator/david-2.jpg"
+          class="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50" />
+        <div class="relative p-4 sm:p-6 lg:p-8">
+          <p class="text-sm font-bold tracking-widest text-orange-600 uppercase">The Artist</p>
+          <p class="text-xl font-bold text-white sm:text-2xl">Tem Pichsavy<br>David</p>
+          <div class="mt-32 sm:mt-48 lg:mt-64">
+            <div
+              class="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
+              <p class="text-sm text-white">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis perferendis hic asperiores
+                quibusdam quidem voluptates doloremque reiciendis nostrum harum. Repudiandae?
+              </p>
+            </div>
+          </div>
+        </div>
+      </a>
+      <!-- Card 2 -->
+      <a href="#" class="group relative block bg-black rounded-xl overflow-hidden">
+        <img alt="" src="./assets/creator/lysha.jpg"
+          class="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50" />
+        <div class="relative p-4 sm:p-6 lg:p-8">
+          <p class="text-sm font-bold tracking-widest text-orange-600 uppercase">The Helper</p>
+          <p class="text-xl font-bold text-white sm:text-2xl">Kertouch <br>Lysha</p>
+          <div class="mt-32 sm:mt-48 lg:mt-64">
+            <div
+              class="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
+              <p class="text-sm text-white">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis perferendis hic asperiores
+                quibusdam quidem voluptates doloremque reiciendis nostrum harum. Repudiandae?
+              </p>
+            </div>
+          </div>
+        </div>
+      </a>
+      <!-- Card 3 -->
+      <a href="#" class="group relative block bg-black rounded-xl overflow-hidden">
+        <img alt="" src="./assets/creator/alex-satya-5.jpg"
+          class="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50" />
+        <div class="relative p-4 sm:p-6 lg:p-8">
+          <p class="text-sm font-bold tracking-widest text-orange-600 uppercase">Developer</p>
+          <p class="text-xl font-bold text-white sm:text-2xl">Alex <br>Satya</p>
+          <div class="mt-32 sm:mt-48 lg:mt-64">
+            <div
+              class="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
+              <p class="text-lg text-white">
+                David said "Bong have we have 2 days left to finish the project, and I said "Hold my beer "
+              </p>
+            </div>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+  <script src="./js/data.js"></script>
+  <script type="module" src="./js/firebase.js"></script>
+</body>
+<!-- Footer -->
+<footer class="bg-base-200 mt-16">
+  <div class="max-w-7xl mx-auto px-4 py-12 grid md:grid-cols-4 gap-8">
+    <div>
+      <div class="flex flex-col items-start text-left">
+        <img src="./assets/4Feets-Logo.svg" class="h-20" alt="4Feets Logo">
+        <span class="text-2xl font-semibold mb-2">4Feets</span>
+      </div>
+      <p class="opacity-70">Best-in-class service & curated selections. Free returns and 24/7 support.</p>
+      <div class="mt-4 flex gap-3"><button class="btn btn-circle btn-sm">in</button><button
+          class="btn btn-circle btn-sm">fb</button><button class="btn btn-circle btn-sm">x</button></div>
+    </div>
+    <div>
+      <h4 class="font-bold mb-3">Company</h4>
+      <ul class="space-y-2 opacity-80">
+        <li><a href="about.html">About</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Careers</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-bold mb-3">Useful Links</h4>
+      <ul class="space-y-2 opacity-80">
+        <li><a href="shop.html">New Products</a></li>
+        <li><a href="shop.html">Best Sellers</a></li>
+        <li><a href="#">Order Tracking</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-bold mb-3">Store</h4>
+      <ul class="space-y-2 opacity-80">
+        <li>9652 Fairground St.<br />Tallahassee, FL 32303</li>
+        <li>+1 (219) 234-0348</li>
+        <li>support@petshop.test</li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-base-300">
+    <div class="max-w-7xl mx-auto px-4 py-6 text-sm opacity-70 flex flex-wrap gap-2 items-center justify-between">
+      <span>© 2025 Pet Shop. All rights reserved.</span>
+      <span class="flex gap-4">VISA · MasterCard · PayPal</span>
+    </div>
+  </div>
+</footer>
+
+</html>

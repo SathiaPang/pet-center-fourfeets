@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Icon & title -->
+  <title>Home — Pet Shop</title>
+  <link rel="icon" type="image/svg+xml" href="./assets/4Feets-Logo.svg">
+  <!-- link tailwind and daisyUI -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.24/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <!-- CSS output & style-->
+  <link rel="stylesheet" href="./styles.css">
+  <script>tailwind.config = { theme: { extend: { fontFamily: { sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'] } } } }</script>
+</head>
+
+<body class="bg-base-100 text-base-content">
+  <div class="navbar bg-base-100 shadow-sm sticky top-0 z-40">
+    <div class="navbar-start">
+      <a href="index.html" class="flex items-center gap-2">
+        <img src="./assets/4Feets-Logo.svg" class="h-8" alt="4Feets Logo">
+        <span class="text-lg font-semibold">4Feets</span>
+      </a>
+    </div>
+    <div class="navbar-center hidden md:flex">
+      <ul class="menu menu-horizontal px-1 font-medium">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="shop.html" class="">Shop</a></li>
+        <li><a href="about.html" class="">About</a></li>
+        <li><a href="contact.html" class="">Contact</a></li>
+      </ul>
+    </div>
+    <div class="navbar-end gap-2">
+      <div class="form-control hidden sm:block"><input type="text" placeholder="Search products..."
+          class="input input-bordered w-44 md:w-72" /></div>
+      <button class="btn btn-ghost btn-circle"><span>❤️</span></button>
+      <button class="btn btn-ghost btn-circle"><span>🛒</span></button>
+    </div>
+  </div>
+  <!-- Hero Section -->
+  <section class="relative">
+    <div class="max-w-7xl mx-auto px-4 py-10 md:py-16 grid md:grid-cols-2 gap-6 items-center">
+      <div class="space-y-6">
+        <p class="badge badge-outline">Pet Center</p>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-orange-600">A pet store
+          with<br>everything you
+          need</h1>
+        <p class="opacity-70 max-w-lg ">Basic information about product display, quick order tips, and friendly service
+          —
+          all in one place.</p>
+        <!-- Button -->
+        <a class="group relative inline-block text-sm font-bold text-orange-600 focus:ring-3 focus:outline-hidden"
+          href="./shop.html">
+          <span
+            class="absolute inset-0 translate-x-0.5 translate-y-0.5 bg-orange-600 transition-transform group-hover:translate-x-0 group-hover:translate-y-0"></span>
+          <span class="relative block border border-current bg-white px-8 py-3"> Shop Now 🛒</span>
+        </a>
+      </div>
+      <div class="relative">
+        <div
+          class="hero-blob absolute -top-10 -right-6 md:-right-12 w-[360px] h-[360px] md:w-[520px] md:h-[520px] -z-10">
+        </div>
+        <img class="rounded-box w-full max-w-md mx-auto drop-shadow-lg"
+          src="https://hips.hearstapps.com/hmg-prod/images/best-guard-dogs-1650302456.jpeg?crop=0.754xw:1.00xh;0.0651xw,0&resize=1200:*"
+          alt="Pets" />
+      </div>
+    </div>
+  </section>
+  <section class="max-w-7xl mx-auto px-4 py-8 md:py-12">
+    <div class="flex items-end justify-between mb-6">
+      <h2 class="text-2xl md:text-3xl font-bold">Browse by category</h2>
+      <div class="join hidden sm:inline-flex">
+        <button class="btn btn-sm join-item" onclick="scrollRow('catRow', -1)">❮</button>
+        <button class="btn btn-sm join-item" onclick="scrollRow('catRow', 1)">❯</button>
+      </div>
+    </div>
+    <div id="catRow" class="carousel carousel-center space-x-4 p-2 w-full"></div>
+  </section>
+
+  <section class="max-w-7xl mx-auto px-4 py-8 md:py-12">
+    <h2 class="text-2xl md:text-3xl font-bold mb-6">Featured products</h2>
+    <div id="featuredGrid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4"></div>
+  </section>
+
+  <section class="bg-base-200">
+    <div class="max-w-7xl mx-auto px-4 py-10 md:py-14 grid md:grid-cols-2 gap-8 items-center">
+      <img class="w-72 md:w-80 mx-auto" src="https://cdn-icons-png.flaticon.com/512/2171/2171991.png" alt="cat-dog">
+      <div>
+        <p class="badge badge-outline mb-3">Pet Shop</p>
+        <h3 class="text-2xl md:text-3xl font-bold mb-3">The smarter way to shop for your pet</h3>
+        <p class="opacity-70 mb-4">Schedule autoship, stack membership perks, and keep your furry friend happy with zero
+          stress.</p>
+        <a class="btn btn-neutral" href="shop.html">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-7xl mx-auto px-4 py-8 md:py-12">
+    <h2 class="text-2xl md:text-3xl font-bold mb-6">Best selling products</h2>
+    <div id="bestGrid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4"></div>
+  </section>
+
+  <section class="max-w-7xl mx-auto px-4 py-8 md:py-12">
+    <div class="flex items-center justify-between mb-6">
+      <h2 class="text-2xl md:text-3xl font-bold">Shop by pet</h2>
+      <div class="join hidden sm:inline-flex">
+        <button class="btn btn-sm join-item" onclick="scrollRow('petRow', -1)">❮</button>
+        <button class="btn btn-sm join-item" onclick="scrollRow('petRow', 1)">❯</button>
+      </div>
+    </div>
+    <div id="petRow" class="carousel carousel-center space-x-4 p-2 w-full"></div>
+  </section>
+
+  <section class="max-w-7xl mx-auto px-4 py-8 md:py-12">
+    <h2 class="text-2xl md:text-3xl font-bold mb-6">News &amp; Blog</h2>
+    <div id="blogGrid" class="grid md:grid-cols-3 gap-6"></div>
+  </section>
+
+  <script src="./js/home.js" type="module"></script>
+  <script src="./js/data.js"></script>
+  <script type="module" src="./js/firebase.js"></script>
+</body>
+<footer class="bg-base-200 mt-16">
+  <div class="max-w-7xl mx-auto px-4 py-12 grid md:grid-cols-4 gap-8">
+    <div>
+      <div class="flex flex-col items-start text-left">
+        <img src="./assets/4Feets-Logo.svg" class="h-20" alt="4Feets Logo">
+        <span class="text-2xl font-semibold mb-2">4Feets</span>
+      </div>
+      <p class="opacity-70">Best-in-class service & curated selections. Free returns and 24/7 support.</p>
+      <div class="mt-4 flex gap-3"><button class="btn btn-circle btn-sm">in</button><button
+          class="btn btn-circle btn-sm">fb</button><button class="btn btn-circle btn-sm">x</button></div>
+    </div>
+    <div>
+      <h4 class="font-bold mb-3">Company</h4>
+      <ul class="space-y-2 opacity-80">
+        <li><a href="about.html">About</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Careers</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-bold mb-3">Useful Links</h4>
+      <ul class="space-y-2 opacity-80">
+        <li><a href="shop.html">New Products</a></li>
+        <li><a href="shop.html">Best Sellers</a></li>
+        <li><a href="#">Order Tracking</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-bold mb-3">Store</h4>
+      <ul class="space-y-2 opacity-80">
+        <li>9652 Fairground St.<br />Tallahassee, FL 32303</li>
+        <li>+1 (219) 234-0348</li>
+        <li>support@petshop.test</li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-base-300">
+    <div class="max-w-7xl mx-auto px-4 py-6 text-sm opacity-70 flex flex-wrap gap-2 items-center justify-between">
+      <span>© 2025 Pet Shop. All rights reserved.</span>
+      <span class="flex gap-4">VISA · MasterCard · PayPal</span>
+    </div>
+  </div>
+</footer>
+
+</html>

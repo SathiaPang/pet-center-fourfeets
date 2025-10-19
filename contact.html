@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Icon & title -->
+  <title>Contact Us - 4Feets</title>
+  <link rel="icon" type="image/svg+xml" href="./assets/4Feets-Logo.svg">
+  <!-- link tailwind and daisyUI -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.24/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <!-- CSS output & style-->
+  <link rel="stylesheet" href="./styles.css">
+  <script>tailwind.config = { theme: { extend: { fontFamily: { sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'] } } } }</script>
+</head>
+
+<body class="bg-base-100 text-base-content">
+  <div class="navbar bg-base-100 shadow-sm sticky top-0 z-40">
+    <div class="navbar-start">
+      <a href="index.html" class="flex items-center gap-2">
+        <img src="./assets/4Feets-Logo.svg" class="h-8" alt="4Feets Logo">
+        <span class="text-lg font-semibold">4Feets</span>
+      </a>
+    </div>
+    <div class="navbar-center hidden md:flex">
+      <ul class="menu menu-horizontal px-1 font-medium">
+        <li><a href="index.html" class="">Home</a></li>
+        <li><a href="shop.html" class="">Shop</a></li>
+        <li><a href="about.html" class="">About</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </div>
+    <div class="navbar-end gap-2">
+      <div class="form-control hidden sm:block"><input type="text" placeholder="Search products..."
+          class="input input-bordered w-44 md:w-72" /></div>
+      <button class="btn btn-ghost btn-circle"><span>❤️</span></button>
+      <button class="btn btn-ghost btn-circle"><span>🛒</span></button>
+    </div>
+  </div>
+
+  <section class="max-w-7xl mx-auto px-4 py-10 md:py-14 grid md:grid-cols-2 gap-8 items-start">
+    <div>
+      <p class="badge badge-outline">Pet Shop</p>
+      <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mt-2 text-orange-500">If animals could talk, they’d
+        talk about us!
+      </h1>
+      <p class="opacity-70 mt-3 max-w-xl">Have questions? Reach out using the form and we’ll get back within 1 business
+        day.</p>
+    </div>
+    <div class="space-y-4">
+      <h3 class="text-2xl md:text-3xl font-bold">Feel free to contact us</h3>
+      <ul class="space-y-3 opacity-80">
+        <li>📍 9652 Fairground St, Tallahassee, FL 32303</li>
+        <li>✉️ support@petshop.test</li>
+        <li>📞 +1 (219) 234-0348</li>
+        <li>🕐 Mon–Fri: 10AM – 10PM</li>
+      </ul>
+      <div class="rounded-box overflow-hidden border border-base-200">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3908.903634663082!2d104.92256897550968!3d11.558765644275441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3109513a3a67c385%3A0xb2e335b62b44f061!2s155%20Rue%20Pasteur%20No.%2051%2C%20Phnom%20Penh!5e0!3m2!1sen!2skh!4v1760852454029!5m2!1sen!2skh"
+          width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <script src="./js/data.js"></script>
+  <script type="module" src="./js/firebase.js"></script>
+</body>
+<footer class="bg-base-200 mt-16">
+  <div class="max-w-7xl mx-auto px-4 py-12 grid md:grid-cols-4 gap-8">
+    <div>
+      <div class="flex flex-col items-start text-left">
+        <img src="./assets/4Feets-Logo.svg" class="h-20" alt="4Feets Logo">
+        <span class="text-2xl font-semibold mb-2">4Feets</span>
+      </div>
+      <p class="opacity-70">Best-in-class service & curated selections. Free returns and 24/7 support.</p>
+      <div class="mt-4 flex gap-3"><button class="btn btn-circle btn-sm">in</button><button
+          class="btn btn-circle btn-sm">fb</button><button class="btn btn-circle btn-sm">x</button></div>
+    </div>
+    <div>
+      <h4 class="font-bold mb-3">Company</h4>
+      <ul class="space-y-2 opacity-80">
+        <li><a href="about.html">About</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Careers</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-bold mb-3">Useful Links</h4>
+      <ul class="space-y-2 opacity-80">
+        <li><a href="shop.html">New Products</a></li>
+        <li><a href="shop.html">Best Sellers</a></li>
+        <li><a href="#">Order Tracking</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-bold mb-3">Store</h4>
+      <ul class="space-y-2 opacity-80">
+        <li>9652 Fairground St.<br />Tallahassee, FL 32303</li>
+        <li>+1 (219) 234-0348</li>
+        <li>support@petshop.test</li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-base-300">
+    <div class="max-w-7xl mx-auto px-4 py-6 text-sm opacity-70 flex flex-wrap gap-2 items-center justify-between">
+      <span>© 2025 Pet Shop. All rights reserved.</span>
+      <span class="flex gap-4">VISA · MasterCard · PayPal</span>
+    </div>
+  </div>
+</footer>
+
+
+</html>

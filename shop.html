@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Icon & title -->
+  <title>Shop - 4Feets</title>
+  <link rel="icon" type="image/svg+xml" href="./assets/4Feets-Logo.svg">
+  <!-- link tailwind and daisyUI -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.24/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <!-- CSS output & style-->
+  <link rel="stylesheet" href="./styles.css">
+  <script>tailwind.config = { theme: { extend: { fontFamily: { sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'] } } } }</script>
+</head>
+<body class="bg-base-100 text-base-content">
+  <div class="navbar bg-base-100 shadow-sm sticky top-0 z-40">
+    <div class="navbar-start">
+      <a href="index.html" class="flex items-center gap-2">
+        <img src="./assets/4Feets-Logo.svg" class="h-8" alt="4Feets Logo">
+        <span class="text-lg font-semibold">4Feets</span>
+      </a>
+    </div>
+    <div class="navbar-center hidden md:flex">
+      <ul class="menu menu-horizontal px-1 font-medium">
+        <li><a href="index.html" class="">Home</a></li>
+        <li><a href="shop.html" class="active">Shop</a></li>
+        <li><a href="about.html" class="">About</a></li>
+        <li><a href="contact.html" class="">Contact</a></li>
+      </ul>
+    </div>
+    <div class="navbar-end gap-2">
+      <div class="form-control hidden sm:block"><input type="text" placeholder="Search products..."
+          class="input input-bordered w-44 md:w-72" /></div>
+      <button class="btn btn-ghost btn-circle"><span>❤️</span></button>
+      <button class="btn btn-ghost btn-circle"><span>🛒</span></button>
+    </div>
+  </div>
+  <!-- Hero Section  -->
+  <section class="max-w-7xl mx-auto px-4 py-8">
+    <div class="hero h-80 rounded-box overflow-hidden"
+      style="background-image: url('https://images.unsplash.com/photo-1524511751214-b0a384dd9afe?q=80&w=2070&auto=format&fit=crop');">
+      <div class="hero-overlay bg-black bg-opacity-60"></div>
+      <div class="hero-content text-center text-white">
+        <div class="max-w-lg">
+          <h1 class="mb-5 text-4xl md:text-5xl font-extrabold leading-tight">
+            Quality Supplies for Your Best Friend
+          </h1>
+          <p class="mb-6 opacity-90">
+            From premium food to the funnest toys, we've got everything your pet needs to live a happy, healthy life.
+            Browse our curated collection.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Filters -->
+  <section class="max-w-7xl mx-auto px-4 py-6 md:py-10">
+    <div class="grid lg:grid-cols-4 gap-6">
+      <aside class="lg:col-span-1 space-y-6">
+        <div class="card bg-base-100 border border-base-200">
+          <div class="card-body">
+            <h3 class="card-title text-base">Filter by categories</h3>
+            <ul id="catList" class="menu menu-sm p-0"></ul>
+          </div>
+        </div>
+        <div class="card bg-base-100 border border-base-200">
+          <div class="card-body">
+            <h3 class="card-title text-base">Filter by price</h3><input id="priceRange" type="range" min="5" max="100"
+              value="100" class="range range-sm">
+            <div class="flex justify-between text-xs opacity-70 mt-1"><span>$5</span><span id="priceLabel">$100</span>
+            </div>
+          </div>
+        </div>
+        <div class="card bg-base-100 border border-base-200">
+          <div class="card-body">
+            <h3 class="card-title text-base">Filter by brands</h3>
+            <ul id="brandList" class="menu menu-sm p-0"></ul>
+          </div>
+        </div>
+        <div class="card bg-base-100 border border-base-200">
+          <div class="card-body">
+            <h3 class="card-title text-base">Tags</h3>
+            <div id="tagList" class="flex flex-wrap gap-2"></div>
+          </div>
+        </div>
+        <div class="card bg-base-100 border border-base-200">
+          <div class="card-body">
+            <h3 class="card-title text-base">Popular products</h3>
+            <div id="popularList" class="space-y-3 text-sm"></div>
+          </div>
+        </div>
+      </aside>
+      <main class="lg:col-span-3">
+        <div class="flex items-center justify-between mb-4">
+          <div class="opacity-70 text-sm" id="resultLabel">Showing 0 results</div>
+          <select id="sortSel" class="select select-sm w-48">
+            <option value="latest">Sort by latest</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+          </select>
+        </div>
+        <div id="productGrid" class="grid grid-cols-2 sm:grid-cols-3 gap-4"></div>
+        <div class="join mt-6 flex justify-center">
+          <button class="btn join-item" id="prevBtn">Prev</button>
+          <button class="btn join-item" id="nextBtn">Next</button>
+        </div>
+      </main>
+    </div>
+  </section>
+  <!-- Script -->
+  <script type="module" src="./js/shop.js"></script>
+  <script src="./js/data.js"></script>
+  <script type="module" src="./js/firebase.js"></script>
+</body>
+<footer class="bg-base-200 mt-16">
+  <div class="max-w-7xl mx-auto px-4 py-12 grid md:grid-cols-4 gap-8">
+    <div>
+      <div class="flex flex-col items-start text-left">
+        <img src="./assets/4Feets-Logo.svg" class="h-20" alt="4Feets Logo">
+        <span class="text-2xl font-semibold mb-2">4Feets</span>
+      </div>
+      <p class="opacity-70">Best-in-class service & curated selections. Free returns and 24/7 support.</p>
+      <div class="mt-4 flex gap-3"><button class="btn btn-circle btn-sm">in</button><button
+          class="btn btn-circle btn-sm">fb</button><button class="btn btn-circle btn-sm">x</button></div>
+    </div>
+    <div>
+      <h4 class="font-bold mb-3">Company</h4>
+      <ul class="space-y-2 opacity-80">
+        <li><a href="about.html">About</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Careers</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-bold mb-3">Useful Links</h4>
+      <ul class="space-y-2 opacity-80">
+        <li><a href="shop.html">New Products</a></li>
+        <li><a href="shop.html">Best Sellers</a></li>
+        <li><a href="#">Order Tracking</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-bold mb-3">Store</h4>
+      <ul class="space-y-2 opacity-80">
+        <li>9652 Fairground St.<br />Tallahassee, FL 32303</li>
+        <li>+1 (219) 234-0348</li>
+        <li>support@petshop.test</li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-base-300">
+    <div class="max-w-7xl mx-auto px-4 py-6 text-sm opacity-70 flex flex-wrap gap-2 items-center justify-between">
+      <span>© 2025 Pet Shop. All rights reserved.</span>
+      <span class="flex gap-4">VISA · MasterCard · PayPal</span>
+    </div>
+  </div>
+</footer>
+</html>
