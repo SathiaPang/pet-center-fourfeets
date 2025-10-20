@@ -19,6 +19,7 @@
   <!-- JS Script-->
   <script type="module" src="./js/authStatus.js"></script>
 </head>
+
 <body class="bg-base-100 text-base-content">
   <div class="navbar bg-base-100 shadow-sm sticky top-0 z-40">
     <div class="navbar-start">
@@ -36,8 +37,8 @@
       </ul>
     </div>
     <div class="navbar-end gap-2">
-      <button class="btn btn-ghost btn-circle"><span>❤️</span></button>
-      <button class="btn btn-ghost btn-circle"><span>🛒</span></button>
+      <a href="favorites.html" class="btn btn-ghost btn-circle"><span>❤️</span></a>
+      <a href="cart.html" class="btn btn-ghost btn-circle"><span>🛒</span></a>
       <div id="auth-status" class="flex items-center gap-2">
       </div>
     </div>
@@ -81,12 +82,10 @@
     </div>
     <div id="catRow" class="carousel carousel-center space-x-4 p-2 w-full"></div>
   </section>
-
   <section class="max-w-7xl mx-auto px-4 py-8 md:py-12">
     <h2 class="text-2xl md:text-3xl font-bold mb-6">Featured products</h2>
     <div id="featuredGrid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4"></div>
   </section>
-
   <section class="bg-base-200">
     <div class="max-w-7xl mx-auto px-4 py-10 md:py-14 grid md:grid-cols-2 gap-8 items-center">
       <img class="w-72 md:w-80 mx-auto" src="https://cdn-icons-png.flaticon.com/512/2171/2171991.png" alt="cat-dog">
@@ -99,12 +98,10 @@
       </div>
     </div>
   </section>
-
   <section class="max-w-7xl mx-auto px-4 py-8 md:py-12">
     <h2 class="text-2xl md:text-3xl font-bold mb-6">Best selling products</h2>
     <div id="bestGrid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4"></div>
   </section>
-
   <section class="max-w-7xl mx-auto px-4 py-8 md:py-12">
     <div class="flex items-center justify-between mb-6">
       <h2 class="text-2xl md:text-3xl font-bold">Shop by pet</h2>
@@ -115,7 +112,6 @@
     </div>
     <div id="petRow" class="carousel carousel-center space-x-4 p-2 w-full"></div>
   </section>
-
   <section class="max-w-7xl mx-auto px-4 py-8 md:py-12">
     <h2 class="text-2xl md:text-3xl font-bold mb-6">News &amp; Blog</h2>
     <div id="blogGrid" class="grid md:grid-cols-3 gap-6"></div>
@@ -154,9 +150,9 @@
     <div>
       <h4 class="font-bold mb-3">Store</h4>
       <ul class="space-y-2 opacity-80">
-        <li>9652 Fairground St.<br />Tallahassee, FL 32303</li>
-        <li>+1 (219) 234-0348</li>
-        <li>support@petshop.test</li>
+        <li>155 Rue Pasteur No. 51,<br />Phnom Penh</li>
+        <li>Tel: 010 203 744</li>
+        <li>Website: <a href="http://alexsatya.me/pet-center-fourfeets/">www.fourfeets.com</a></li>
       </ul>
     </div>
   </div>

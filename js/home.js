@@ -7,26 +7,26 @@ function el(html) {
   t.innerHTML = html.trim();
   return t.content.firstElementChild;
 }
-
-// Product card template
 function productCard(p) {
   return el(`
     <div class="card bg-base-100 border border-base-200 hover:shadow-md transition">
-      <figure class="aspect-square bg-base-200">
-        <img src="${p.image}" alt="${p.title}" class="object-cover w-full h-full"/>
-      </figure>
+      <a href="product.html?id=${p.id}">
+        <figure class="aspect-square bg-base-200 cursor-pointer">
+          <img src="${p.image}" alt="${p.title}" class="object-cover w-full h-full"/>
+        </figure>
+      </a>
       <div class="card-body p-4">
-        <h3 class="card-title text-base">${p.title}</h3>
+        <a href="product.html?id=${p.id}" class="hover:underline">
+          <h3 class="card-title text-base">${p.title}</h3>
+        </a>
         <div class="flex items-center justify-between">
           <span class="font-semibold">$${Number(p.price).toFixed(2)}</span>
-          <button class="btn btn-sm btn-primary">Add</button>
+          <a href="product.html?id=${p.id}" class="btn btn-sm btn-outline">View</a>
         </div>
       </div>
     </div>
   `);
 }
-
-// Category card template
 function categoryCard(c) {
   return el(`
     <div class="carousel-item">
@@ -42,8 +42,6 @@ function categoryCard(c) {
     </div>
   `);
 }
-
-// Pet pill template
 function petPill(p) {
   return el(`
     <div class="carousel-item">
@@ -58,8 +56,6 @@ function petPill(p) {
     </div>
   `);
 }
-
-// Blog card template
 function blogCard(n) {
   return el(`
     <article class="card bg-base-100 border border-base-200 hover:shadow-md transition">
@@ -71,45 +67,43 @@ function blogCard(n) {
         <h3 class="card-title text-base">${n.title}</h3>
         <p class="opacity-70 text-sm">Discover helpful tips and insights for your beloved pets.</p>
         <div class="card-actions">
-          <a href="#" class="link">Read more →</a>
+          <a href="https://wsava.org/wp-content/uploads/2021/04/Selecting-a-pet-food-for-your-pet-updated-2021_WSAVA-Global-Nutrition-Toolkit.pdf" class="link">Read more →</a>
         </div>
       </div>
     </article>
   `);
 }
-
-// Mount function to render all sections
 function mount() {
   const data = getData();
-  
+
   // Render categories
   const categories = data.categories || [];
   const catRow = document.getElementById('catRow');
   if (catRow) {
     categories.forEach(c => catRow.appendChild(categoryCard(c)));
   }
-  
+
   // Render featured products
   const featured = data.featured || [];
   const featuredGrid = document.getElementById('featuredGrid');
   if (featuredGrid) {
     featured.forEach(p => featuredGrid.appendChild(productCard(p)));
   }
-  
+
   // Render best selling products
   const best = data.bestSelling || [];
   const bestGrid = document.getElementById('bestGrid');
   if (bestGrid) {
     best.forEach(p => bestGrid.appendChild(productCard(p)));
   }
-  
+
   // Render pets
   const pets = data.pets || [];
   const petRow = document.getElementById('petRow');
   if (petRow) {
     pets.forEach(p => petRow.appendChild(petPill(p)));
   }
-  
+
   // Render blog
   const blog = data.blog || [];
   const blogGrid = document.getElementById('blogGrid');
@@ -117,16 +111,12 @@ function mount() {
     blog.forEach(n => blogGrid.appendChild(blogCard(n)));
   }
 }
-
-// Scroll row function for carousels
 window.scrollRow = (id, dir) => {
   const element = document.getElementById(id);
   if (element) {
     element.scrollBy({ left: dir * 320, behavior: 'smooth' });
   }
 };
-
-// Initialize when DOM is ready
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', mount);
 } else {

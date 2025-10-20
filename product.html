@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Log In - 4Feets</title>
+    <title>Product Details - 4Feets</title>
     <link rel="icon" type="image/svg+xml" href="./assets/4Feets-Logo.svg">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.24/dist/full.min.css" rel="stylesheet" type="text/css" />
@@ -12,9 +12,9 @@
         rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
     <script>tailwind.config = { theme: { extend: { fontFamily: { sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'] } } } }</script>
-    <!-- Script JS Logic -->
-    <script type="module" src="./js/login.js"></script>
     <script type="module" src="./js/authStatus.js"></script>
+    <script type="module" src="./js/product.js"></script>
+
 </head>
 
 <body class="bg-base-100 text-base-content">
@@ -27,50 +27,57 @@
         </div>
         <div class="navbar-center hidden md:flex">
             <ul class="menu menu-horizontal px-1 font-medium">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="shop.html">Shop</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="index.html" class="">Home</a></li>
+                <li><a href="shop.html" class="">Shop</a></li>
+                <li><a href="about.html" class="">About</a></li>
+                <li><a href="contact.html" class="">Contact</a></li>
             </ul>
         </div>
         <div class="navbar-end gap-2">
-            <a href="favorites.html" class="btn btn-ghost btn-circle"><span>❤️</span></a>
-            <a href="cart.html" class="btn btn-ghost btn-circle"><span>🛒</span></a>
-            <div id="auth-status" class="flex items-center gap-2">
+            <div class="form-control hidden sm:block">
+                <input type="text" placeholder="Search products..." class="input input-bordered w-44 md:w-72" />
             </div>
+            <a href="favorites.html" class="btn btn-ghost btn-circle indicator"><span>❤️</span></a>
+            <a href="cart.html" class="btn btn-ghost btn-circle indicator"><span>🛒</span></a>
+            <div id="auth-status" class="flex items-center gap-2"></div>
         </div>
     </div>
-    <section class="py-16 md:py-24">
-        <div class="max-w-md mx-auto px-4">
-            <div class="card bg-base-200 shadow-xl">
-                <div class="card-body">
-                    <h1 class="card-title text-3xl font-bold mb-6">Log In to Your Account</h1>
 
-                    <form id="login-form">
-                        <div class="form-control mb-4">
-                            <label class="label" for="email">
-                                <span class="label-text">Email Address</span>
-                            </label>
-                            <input type="email" id="email" placeholder="you@example.com"
-                                class="input input-bordered w-full" required />
-                        </div>
-                        <div class="form-control mb-6">
-                            <label class="label" for="password">
-                                <span class="label-text">Password</span>
-                            </label>
-                            <input type="password" id="password" placeholder="••••••••"
-                                class="input input-bordered w-full" required />
-                        </div>
-                        <div class="card-actions justify-end">
-                            <button type="submit" class="btn btn-primary w-full">Log In</button>
-                        </div>
-                    </form>
-                    <div class="divider my-4">Don't have an account?</div>
-                    <a href="signup.html" class="btn btn-outline w-full">Create Account Instead</a>
+    <section class="max-w-6xl mx-auto px-4 py-12 md:py-16">
+        <div class="grid md:grid-cols-2 gap-8 lg:gap-12 items-start">
+
+            <div class="bg-base-200 p-4 rounded-box aspect-square flex items-center justify-center">
+                <img id="product-image" src="" alt="Product Image"
+                    class="max-w-full max-h-[70vh] object-contain mix-blend-multiply" />
+            </div>
+
+            <div>
+                <h1 id="product-name" class="text-3xl md:text-4xl font-extrabold mb-3">Product Name</h1>
+                <p id="product-price" class="text-3xl text-primary font-semibold mb-5">$0.00</p>
+
+                <div class="prose prose-sm max-w-none opacity-80 mb-6">
+                    <p id="product-description">Product description goes here...</p>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <button id="add-to-cart-btn-detail" class="btn btn-primary flex-1">Add to Cart</button>
+                    <button id="add-to-fav-btn-detail" class="btn btn-outline flex-1 gap-2">
+                        ❤️
+                        <span>Add to Favorites</span>
+                    </button>
+                </div>
+
+                <div class="text-sm opacity-60 mt-6 space-y-1">
+                    <p>Category: <span id="product-category">N/A</span></p>
+                    <p>Brand: <span id="product-brand">N/A</span></p>
                 </div>
             </div>
         </div>
+
     </section>
+    <script src="./js/data.js"></script>
+    <script type="module" src="./js/product.js"></script>
+
 </body>
 <footer class="bg-base-200 mt-16">
     <div class="max-w-7xl mx-auto px-4 py-12 grid md:grid-cols-4 gap-8">
