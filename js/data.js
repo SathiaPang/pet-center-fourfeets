@@ -2,115 +2,97 @@ window.__DATA__ = {
   "categories": [
     {
       "id": "c1",
-      "name": "Accessories",
-      "count": 51,
-      "image": "https://picsum.photos/seed/cat1/480/320"
+      "name": "Food",
+      "count": 16,
+      "image": "../assets/icon/Food icon.svg"
     },
     {
       "id": "c2",
-      "name": "Food",
-      "count": 24,
-      "image": "https://picsum.photos/seed/cat2/480/320"
+      "name": "Accessories",
+      "count": 11,
+      "image": "../assets/icon/Price tag icon.svg"
     },
     {
       "id": "c3",
-      "name": "Furniture",
-      "count": 22,
-      "image": "https://picsum.photos/seed/cat3/480/320"
-    },
-    {
-      "id": "c4",
-      "name": "Bags",
-      "count": 18,
-      "image": "https://picsum.photos/seed/cat4/480/320"
-    },
-    {
-      "id": "c5",
-      "name": "Toys",
-      "count": 33,
-      "image": "https://picsum.photos/seed/cat5/480/320"
-    },
-    {
-      "id": "c6",
-      "name": "Care",
-      "count": 19,
-      "image": "https://picsum.photos/seed/cat6/480/320"
+      "name": "Grooming",
+      "count": 21,
+      "image": "../assets/icon/Vet icon.svg"
     }
   ],
   "featured": [
     {
-      "id": "p1",
-      "title": "Premium Dog Food",
-      "price": 19.99,
-      "image": "https://picsum.photos/seed/p1/600/600"
+      "id": "prod1",
+      "title": "Premium Dry Dog Food",
+      "price": 24.99,
+      "image": "../assets/product/food/Dry1.webp"
     },
     {
-      "id": "p2",
-      "title": "Premium Cat Food",
-      "price": 18.25,
-      "image": "https://picsum.photos/seed/p2/600/600"
+      "id": "prod17",
+      "title": "Stainless Steel Pet Bowl",
+      "price": 15.99,
+      "image": "../assets/product/accessories/Bowl/Bowl1.jpg"
     },
     {
-      "id": "p3",
-      "title": "Grain-Free Kibble",
-      "price": 22.5,
-      "image": "https://picsum.photos/seed/p3/600/600"
+      "id": "prod28",
+      "title": "Natural Dog Shampoo",
+      "price": 14.99,
+      "image": "../assets/product/grooming/Shampoo/Shampoo1.jpg"
     },
     {
-      "id": "p4",
-      "title": "Vet Approved Mix",
-      "price": 25.0,
-      "image": "https://picsum.photos/seed/p4/600/600"
+      "id": "prod13",
+      "title": "Crunchy Dog Treats",
+      "price": 12.99,
+      "image": "../assets/product/food/Treat1.jpg"
     }
   ],
   "bestSelling": [
     {
-      "id": "b1",
-      "title": "Cat Bowl #1",
-      "price": 9.99,
-      "image": "https://picsum.photos/seed/bs0/600/600"
+      "id": "prod7",
+      "title": "Premium Wet Dog Food",
+      "price": 18.99,
+      "image": "../assets/product/food/Wet1.webp"
     },
     {
-      "id": "b2",
-      "title": "Dog Leash #2",
-      "price": 10.99,
-      "image": "https://picsum.photos/seed/bs1/600/600"
+      "id": "prod18",
+      "title": "Ceramic Cat Bowl",
+      "price": 18.50,
+      "image": "../assets/product/accessories/Bowl/Bowl2.jpg"
     },
     {
-      "id": "b3",
-      "title": "Dog Bed #3",
-      "price": 11.99,
-      "image": "https://picsum.photos/seed/bs2/600/600"
-    },
-    {
-      "id": "b4",
-      "title": "Premium Cat Food #4",
-      "price": 12.99,
-      "image": "https://picsum.photos/seed/bs3/600/600"
-    },
-    {
-      "id": "b5",
-      "title": "Cat Bowl #5",
-      "price": 13.99,
-      "image": "https://picsum.photos/seed/bs4/600/600"
-    },
-    {
-      "id": "b6",
-      "title": "Dog Leash #6",
-      "price": 14.99,
-      "image": "https://picsum.photos/seed/bs5/600/600"
-    },
-    {
-      "id": "b7",
-      "title": "Dog Bed #7",
-      "price": 15.99,
-      "image": "https://picsum.photos/seed/bs6/600/600"
-    },
-    {
-      "id": "b8",
-      "title": "Premium Cat Food #8",
+      "id": "prod23",
+      "title": "Durable Dog Leash",
       "price": 16.99,
-      "image": "https://picsum.photos/seed/bs7/600/600"
+      "image": "../assets/product/accessories/leash-harness/Leash1.jpg"
+    },
+    {
+      "id": "prod29",
+      "title": "Gentle Cat Shampoo",
+      "price": 13.50,
+      "image": "../assets/product/grooming/Shampoo/Shampoo2.jpg"
+    },
+    {
+      "id": "prod36",
+      "title": "Dog Toothbrush Kit",
+      "price": 9.99,
+      "image": "../assets/product/grooming/DentalCare/Teeth1.jpg"
+    },
+    {
+      "id": "prod14",
+      "title": "Healthy Cat Treats",
+      "price": 11.50,
+      "image": "../assets/product/food/Treat2.jpg"
+    },
+    {
+      "id": "prod21",
+      "title": "Adjustable Dog Collar",
+      "price": 12.99,
+      "image": "../assets/product/accessories/Collar/Collar1.jpg"
+    },
+    {
+      "id": "prod41",
+      "title": "Pet Conditioner",
+      "price": 13.99,
+      "image": "../assets/product/grooming/Conditioner/Condition1.jpg"
     }
   ],
   "pets": [
@@ -150,489 +132,512 @@ window.__DATA__ = {
       "id": "n1",
       "title": "10 Tips for First-Time Pet Owners",
       "date": "24 May, 2025",
-      "image": "https://picsum.photos/seed/news1/800/600"
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb3YZsm-IShhuZUqimN2-8ta_uetDg99tMrQ&s"
     },
     {
       "id": "n2",
       "title": "How to Choose Healthy Pet Food",
       "date": "24 May, 2025",
-      "image": "https://picsum.photos/seed/news2/800/600"
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQd7GptlbF45r_wVr3rlXQDjzOtoqwRuC9nPA&s"
     },
     {
       "id": "n3",
       "title": "Best Toys for Indoor Cats",
       "date": "24 May, 2025",
-      "image": "https://picsum.photos/seed/news3/800/600"
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA-3WoaP5YEfyrGfaJYVbPcqKXuLOP1jQ3pw&s"
     }
   ],
   "products": [
+    // FOOD CATEGORY - Dry Food (6 products)
     {
       "id": "prod1",
-      "title": "Ultra Cat Food",
-      "price": 21.88,
-      "image": "https://picsum.photos/seed/prod1/800/800",
-      "category": "Accessories",
+      "title": "Premium Dry Dog Food",
+      "price": 24.99,
+      "image": "../assets/product/food/Dry1.webp",
+      "category": "Food",
       "pet": "Dog",
       "brand": "Natural food",
-      "tags": [
-        "dog food",
-        "small dog"
-      ]
+      "tags": ["dog food", "dry food"]
     },
     {
       "id": "prod2",
-      "title": "Eco Dog Bowl",
-      "price": 31.82,
-      "image": "https://picsum.photos/seed/prod2/800/800",
+      "title": "Natural Dry Cat Food",
+      "price": 22.50,
+      "image": "../assets/product/food/Dry2.webp",
       "category": "Food",
-      "pet": "Dog",
+      "pet": "Cat",
       "brand": "Pet food",
-      "tags": [
-        "small dog",
-        "cat food"
-      ]
+      "tags": ["cat food", "dry food"]
     },
     {
       "id": "prod3",
-      "title": "Classic Dog Bed",
-      "price": 43.8,
-      "image": "https://picsum.photos/seed/prod3/800/800",
+      "title": "Organic Dry Pet Food",
+      "price": 28.99,
+      "image": "../assets/product/food/Dry3.webp",
       "category": "Food",
-      "pet": "Rabbit",
+      "pet": "Dog",
       "brand": "Dog friend",
-      "tags": [
-        "cat food",
-        "parrot"
-      ]
+      "tags": ["dog food", "organic"]
     },
     {
       "id": "prod4",
-      "title": "Premium Cat Bowl",
-      "price": 9.78,
-      "image": "https://picsum.photos/seed/prod4/800/800",
-      "category": "Care",
-      "pet": "Hamster",
+      "title": "Premium Dry Cat Food",
+      "price": 26.75,
+      "image": "../assets/product/food/Dry4.webp",
+      "category": "Food",
+      "pet": "Cat",
       "brand": "Natural food",
-      "tags": [
-        "parrot",
-        "small dog"
-      ]
+      "tags": ["cat food", "premium"]
     },
     {
       "id": "prod5",
-      "title": "Eco Dog Bowl",
-      "price": 31.73,
-      "image": "https://picsum.photos/seed/prod5/800/800",
+      "title": "Healthy Dry Dog Food",
+      "price": 23.50,
+      "image": "../assets/product/food/Dry5.webp",
       "category": "Food",
-      "pet": "Turtle",
+      "pet": "Dog",
       "brand": "Pet food",
-      "tags": [
-        "parrot",
-        "natural"
-      ]
+      "tags": ["dog food", "healthy"]
     },
     {
       "id": "prod6",
-      "title": "Ultra Dog Food",
-      "price": 35.66,
-      "image": "https://picsum.photos/seed/prod6/800/800",
-      "category": "Care",
-      "pet": "Parrot",
+      "title": "Nutritious Dry Food",
+      "price": 25.99,
+      "image": "../assets/product/food/Dry6.webp",
+      "category": "Food",
+      "pet": "Cat",
       "brand": "Dog friend",
-      "tags": [
-        "dog food",
-        "parrot"
-      ]
+      "tags": ["cat food", "nutritious"]
     },
+    // FOOD CATEGORY - Wet Food (6 products)
     {
       "id": "prod7",
-      "title": "Eco Dog Bowl",
-      "price": 34.69,
-      "image": "https://picsum.photos/seed/prod7/800/800",
-      "category": "Toys",
-      "pet": "Rabbit",
-      "brand": "Dog friend",
-      "tags": [
-        "parrot",
-        "dog food"
-      ]
+      "title": "Premium Wet Dog Food",
+      "price": 18.99,
+      "image": "../assets/product/food/Wet1.webp",
+      "category": "Food",
+      "pet": "Dog",
+      "brand": "Natural food",
+      "tags": ["dog food", "wet food"]
     },
     {
       "id": "prod8",
-      "title": "Premium Cat Bowl",
-      "price": 32.47,
-      "image": "https://picsum.photos/seed/prod8/800/800",
-      "category": "Accessories",
-      "pet": "Parrot",
-      "brand": "Natural food",
-      "tags": [
-        "natural",
-        "dog food"
-      ]
+      "title": "Gourmet Wet Cat Food",
+      "price": 16.50,
+      "image": "../assets/product/food/Wet2.webp",
+      "category": "Food",
+      "pet": "Cat",
+      "brand": "Pet food",
+      "tags": ["cat food", "gourmet"]
     },
     {
       "id": "prod9",
-      "title": "Premium Dog Bowl",
-      "price": 31.39,
-      "image": "https://picsum.photos/seed/prod9/800/800",
+      "title": "Delicious Wet Food",
+      "price": 19.99,
+      "image": "../assets/product/food/Wet3.webp",
       "category": "Food",
-      "pet": "Turtle",
+      "pet": "Dog",
       "brand": "Dog friend",
-      "tags": [
-        "parrot",
-        "cat food"
-      ]
+      "tags": ["dog food", "delicious"]
     },
     {
       "id": "prod10",
-      "title": "Ultra Cat Bed",
-      "price": 7.98,
-      "image": "https://picsum.photos/seed/prod10/800/800",
-      "category": "Beds",
-      "pet": "Turtle",
-      "brand": "Pet food",
-      "tags": [
-        "small dog",
-        "natural"
-      ]
+      "title": "Tasty Wet Cat Food",
+      "price": 17.75,
+      "image": "../assets/product/food/Wet4.webp",
+      "category": "Food",
+      "pet": "Cat",
+      "brand": "Natural food",
+      "tags": ["cat food", "tasty"]
     },
     {
       "id": "prod11",
-      "title": "Premium Cat Leash",
-      "price": 37.24,
-      "image": "https://picsum.photos/seed/prod11/800/800",
+      "title": "Premium Wet Food Mix",
+      "price": 20.50,
+      "image": "../assets/product/food/Wet5.webp",
       "category": "Food",
-      "pet": "Cat",
+      "pet": "Dog",
       "brand": "Pet food",
-      "tags": [
-        "small dog",
-        "natural"
-      ]
+      "tags": ["dog food", "premium"]
     },
     {
       "id": "prod12",
-      "title": "Eco Cat Treats",
-      "price": 14.53,
-      "image": "https://picsum.photos/seed/prod12/800/800",
-      "category": "Care",
-      "pet": "Turtle",
-      "brand": "Natural food",
-      "tags": [
-        "parrot",
-        "small dog"
-      ]
+      "title": "Nutritious Wet Food",
+      "price": 18.25,
+      "image": "../assets/product/food/Wet6.webp",
+      "category": "Food",
+      "pet": "Cat",
+      "brand": "Green line",
+      "tags": ["cat food", "nutritious"]
     },
+    // FOOD CATEGORY - Treats (4 products)
     {
       "id": "prod13",
-      "title": "Classic Dog Bowl",
-      "price": 28.64,
-      "image": "https://picsum.photos/seed/prod13/800/800",
-      "category": "Beds",
-      "pet": "Rabbit",
+      "title": "Crunchy Dog Treats",
+      "price": 12.99,
+      "image": "../assets/product/food/Treat1.jpg",
+      "category": "Food",
+      "pet": "Dog",
       "brand": "Natural food",
-      "tags": [
-        "cat food",
-        "parrot"
-      ]
+      "tags": ["dog treats", "crunchy"]
     },
     {
       "id": "prod14",
-      "title": "Premium Dog Bowl",
-      "price": 16.62,
-      "image": "https://picsum.photos/seed/prod14/800/800",
-      "category": "Accessories",
-      "pet": "Turtle",
+      "title": "Healthy Cat Treats",
+      "price": 11.50,
+      "image": "../assets/product/food/Treat2.jpg",
+      "category": "Food",
+      "pet": "Cat",
       "brand": "Pet food",
-      "tags": [
-        "small dog",
-        "cat food"
-      ]
+      "tags": ["cat treats", "healthy"]
     },
     {
       "id": "prod15",
-      "title": "Classic Dog Food",
-      "price": 42.18,
-      "image": "https://picsum.photos/seed/prod15/800/800",
-      "category": "Beds",
+      "title": "Premium Pet Treats",
+      "price": 14.99,
+      "image": "../assets/product/food/Treat3.jpg",
+      "category": "Food",
       "pet": "Dog",
-      "brand": "Pet food",
-      "tags": [
-        "cat food",
-        "small dog"
-      ]
+      "brand": "Dog friend",
+      "tags": ["dog treats", "premium"]
     },
     {
       "id": "prod16",
-      "title": "Premium Cat Food",
-      "price": 13.46,
-      "image": "https://picsum.photos/seed/prod16/800/800",
+      "title": "Delicious Treats",
+      "price": 13.25,
+      "image": "../assets/product/food/Treat4.jpg",
       "category": "Food",
-      "pet": "Parrot",
-      "brand": "Pet food",
-      "tags": [
-        "parrot",
-        "small dog"
-      ]
+      "pet": "Cat",
+      "brand": "Green line",
+      "tags": ["cat treats", "delicious"]
     },
+    // ACCESSORIES CATEGORY - Bowls (4 products)
     {
       "id": "prod17",
-      "title": "Eco Dog Treats",
-      "price": 43.76,
-      "image": "https://picsum.photos/seed/prod17/800/800",
-      "category": "Toys",
-      "pet": "Parrot",
-      "brand": "Natural food",
-      "tags": [
-        "dog food",
-        "cat food"
-      ]
+      "title": "Stainless Steel Pet Bowl",
+      "price": 15.99,
+      "image": "../assets/product/accessories/Bowl/Bowl1.jpg",
+      "category": "Accessories",
+      "pet": "Dog",
+      "brand": "Pet food",
+      "tags": ["bowl", "stainless steel"]
     },
     {
       "id": "prod18",
-      "title": "Ultra Cat Bowl",
-      "price": 33.33,
-      "image": "https://picsum.photos/seed/prod18/800/800",
-      "category": "Beds",
-      "pet": "Rabbit",
-      "brand": "Dog friend",
-      "tags": [
-        "parrot",
-        "natural"
-      ]
+      "title": "Ceramic Cat Bowl",
+      "price": 18.50,
+      "image": "../assets/product/accessories/Bowl/Bowl2.jpg",
+      "category": "Accessories",
+      "pet": "Cat",
+      "brand": "Natural food",
+      "tags": ["bowl", "ceramic"]
     },
     {
       "id": "prod19",
-      "title": "Classic Cat Food",
-      "price": 13.12,
-      "image": "https://picsum.photos/seed/prod19/800/800",
-      "category": "Care",
-      "pet": "Hamster",
-      "brand": "Natural food",
-      "tags": [
-        "cat food",
-        "dog food"
-      ]
+      "title": "Premium Pet Bowl Set",
+      "price": 24.99,
+      "image": "../assets/product/accessories/Bowl/Bowl3.jpg",
+      "category": "Accessories",
+      "pet": "Dog",
+      "brand": "Dog friend",
+      "tags": ["bowl", "set"]
     },
     {
       "id": "prod20",
-      "title": "Eco Cat Leash",
-      "price": 47.39,
-      "image": "https://picsum.photos/seed/prod20/800/800",
-      "category": "Toys",
-      "pet": "Hamster",
-      "brand": "Dog friend",
-      "tags": [
-        "parrot",
-        "cat food"
-      ]
+      "title": "Elevated Pet Bowl",
+      "price": 29.99,
+      "image": "../assets/product/accessories/Bowl/Bowl4.jpg",
+      "category": "Accessories",
+      "pet": "Cat",
+      "brand": "Pet food",
+      "tags": ["bowl", "elevated"]
     },
+    // ACCESSORIES CATEGORY - Collars (2 products)
     {
       "id": "prod21",
-      "title": "Eco Dog Food",
-      "price": 15.87,
-      "image": "https://picsum.photos/seed/prod21/800/800",
-      "category": "Care",
-      "pet": "Turtle",
-      "brand": "Pet food",
-      "tags": [
-        "dog food",
-        "natural"
-      ]
+      "title": "Adjustable Dog Collar",
+      "price": 12.99,
+      "image": "../assets/product/accessories/Collar/Collar1.jpg",
+      "category": "Accessories",
+      "pet": "Dog",
+      "brand": "Dog friend",
+      "tags": ["collar", "adjustable"]
     },
     {
       "id": "prod22",
-      "title": "Eco Cat Bed",
-      "price": 19.67,
-      "image": "https://picsum.photos/seed/prod22/800/800",
-      "category": "Care",
-      "pet": "Dog",
+      "title": "Premium Cat Collar",
+      "price": 14.50,
+      "image": "../assets/product/accessories/Collar/Collar2.jpg",
+      "category": "Accessories",
+      "pet": "Cat",
       "brand": "Pet food",
-      "tags": [
-        "natural",
-        "cat food"
-      ]
+      "tags": ["collar", "premium"]
     },
+    // ACCESSORIES CATEGORY - Leash & Harness (5 products)
     {
       "id": "prod23",
-      "title": "Eco Dog Leash",
-      "price": 35.91,
-      "image": "https://picsum.photos/seed/prod23/800/800",
-      "category": "Toys",
-      "pet": "Parrot",
-      "brand": "Green line",
-      "tags": [
-        "natural",
-        "small dog"
-      ]
+      "title": "Durable Dog Leash",
+      "price": 16.99,
+      "image": "../assets/product/accessories/leash-harness/Leash1.jpg",
+      "category": "Accessories",
+      "pet": "Dog",
+      "brand": "Natural food",
+      "tags": ["leash", "durable"]
     },
     {
       "id": "prod24",
-      "title": "Eco Cat Leash",
-      "price": 22.22,
-      "image": "https://picsum.photos/seed/prod24/800/800",
-      "category": "Toys",
-      "pet": "Rabbit",
-      "brand": "Pet food",
-      "tags": [
-        "small dog",
-        "parrot"
-      ]
+      "title": "Retractable Pet Leash",
+      "price": 22.50,
+      "image": "../assets/product/accessories/leash-harness/Leash2.jpg",
+      "category": "Accessories",
+      "pet": "Dog",
+      "brand": "Dog friend",
+      "tags": ["leash", "retractable"]
     },
     {
       "id": "prod25",
-      "title": "Classic Cat Leash",
-      "price": 44.87,
-      "image": "https://picsum.photos/seed/prod25/800/800",
-      "category": "Care",
-      "pet": "Turtle",
-      "brand": "Green line",
-      "tags": [
-        "natural",
-        "small dog"
-      ]
+      "title": "Comfortable Dog Harness",
+      "price": 28.99,
+      "image": "../assets/product/accessories/leash-harness/Leash3.jpg",
+      "category": "Accessories",
+      "pet": "Dog",
+      "brand": "Pet food",
+      "tags": ["harness", "comfortable"]
     },
     {
       "id": "prod26",
-      "title": "Classic Dog Food",
-      "price": 27.91,
-      "image": "https://picsum.photos/seed/prod26/800/800",
+      "title": "Premium Pet Leash",
+      "price": 19.99,
+      "image": "../assets/product/accessories/leash-harness/Leash4.jpg",
       "category": "Accessories",
-      "pet": "Turtle",
+      "pet": "Cat",
       "brand": "Green line",
-      "tags": [
-        "dog food",
-        "cat food"
-      ]
+      "tags": ["leash", "premium"]
     },
     {
       "id": "prod27",
-      "title": "Classic Dog Bowl",
-      "price": 37.38,
-      "image": "https://picsum.photos/seed/prod27/800/800",
-      "category": "Food",
-      "pet": "Cat",
+      "title": "Adjustable Harness Set",
+      "price": 32.50,
+      "image": "../assets/product/accessories/leash-harness/Leash5.jpg",
+      "category": "Accessories",
+      "pet": "Dog",
       "brand": "Natural food",
-      "tags": [
-        "cat food",
-        "small dog"
-      ]
+      "tags": ["harness", "adjustable"]
     },
+    // GROOMING CATEGORY - Shampoo (8 products)
     {
       "id": "prod28",
-      "title": "Classic Cat Treats",
-      "price": 10.12,
-      "image": "https://picsum.photos/seed/prod28/800/800",
-      "category": "Care",
-      "pet": "Cat",
-      "brand": "Green line",
-      "tags": [
-        "natural",
-        "dog food"
-      ]
+      "title": "Natural Dog Shampoo",
+      "price": 14.99,
+      "image": "../assets/product/grooming/Shampoo/Shampoo1.jpg",
+      "category": "Grooming",
+      "pet": "Dog",
+      "brand": "Natural food",
+      "tags": ["shampoo", "natural"]
     },
     {
       "id": "prod29",
-      "title": "Ultra Dog Bowl",
-      "price": 25.23,
-      "image": "https://picsum.photos/seed/prod29/800/800",
-      "category": "Food",
-      "pet": "Dog",
-      "brand": "Natural food",
-      "tags": [
-        "small dog",
-        "parrot"
-      ]
+      "title": "Gentle Cat Shampoo",
+      "price": 13.50,
+      "image": "../assets/product/grooming/Shampoo/Shampoo2.jpg",
+      "category": "Grooming",
+      "pet": "Cat",
+      "brand": "Pet food",
+      "tags": ["shampoo", "gentle"]
     },
     {
       "id": "prod30",
-      "title": "Classic Dog Leash",
-      "price": 22.02,
-      "image": "https://picsum.photos/seed/prod30/800/800",
-      "category": "Food",
-      "pet": "Rabbit",
-      "brand": "Dog friend",
-      "tags": [
-        "dog food",
-        "small dog"
-      ]
+      "title": "Hypoallergenic Shampoo",
+      "price": 16.99,
+      "image": "../assets/product/grooming/Shampoo/Shampoo3.jpg",
+      "category": "Grooming",
+      "pet": "Dog",
+      "brand": "Green line",
+      "tags": ["shampoo", "hypoallergenic"]
     },
     {
       "id": "prod31",
-      "title": "Classic Dog Food",
-      "price": 17.98,
-      "image": "https://picsum.photos/seed/prod31/800/800",
-      "category": "Care",
-      "pet": "Parrot",
-      "brand": "Pet food",
-      "tags": [
-        "small dog",
-        "dog food"
-      ]
+      "title": "Premium Pet Shampoo",
+      "price": 18.50,
+      "image": "../assets/product/grooming/Shampoo/Shampoo4.jpg",
+      "category": "Grooming",
+      "pet": "Cat",
+      "brand": "Dog friend",
+      "tags": ["shampoo", "premium"]
     },
     {
       "id": "prod32",
-      "title": "Ultra Cat Bowl",
-      "price": 7.76,
-      "image": "https://picsum.photos/seed/prod32/800/800",
-      "category": "Accessories",
-      "pet": "Cat",
+      "title": "Moisturizing Shampoo",
+      "price": 15.99,
+      "image": "../assets/product/grooming/Shampoo/Shampoo5.jpg",
+      "category": "Grooming",
+      "pet": "Dog",
       "brand": "Natural food",
-      "tags": [
-        "natural",
-        "parrot"
-      ]
+      "tags": ["shampoo", "moisturizing"]
     },
     {
       "id": "prod33",
-      "title": "Premium Dog Bed",
-      "price": 16.83,
-      "image": "https://picsum.photos/seed/prod33/800/800",
-      "category": "Toys",
-      "pet": "Hamster",
+      "title": "Whitening Pet Shampoo",
+      "price": 17.25,
+      "image": "../assets/product/grooming/Shampoo/Shampoo6.jpg",
+      "category": "Grooming",
+      "pet": "Cat",
       "brand": "Pet food",
-      "tags": [
-        "parrot",
-        "cat food"
-      ]
+      "tags": ["shampoo", "whitening"]
     },
     {
       "id": "prod34",
-      "title": "Classic Cat Leash",
-      "price": 23.51,
-      "image": "https://picsum.photos/seed/prod34/800/800",
-      "category": "Accessories",
-      "pet": "Hamster",
+      "title": "Organic Dog Shampoo",
+      "price": 19.99,
+      "image": "../assets/product/grooming/Shampoo/Shampoo7.jpg",
+      "category": "Grooming",
+      "pet": "Dog",
       "brand": "Green line",
-      "tags": [
-        "dog food",
-        "natural"
-      ]
+      "tags": ["shampoo", "organic"]
     },
     {
       "id": "prod35",
-      "title": "Eco Dog Bowl",
-      "price": 10.0,
-      "image": "https://picsum.photos/seed/prod35/800/800",
-      "category": "Beds",
-      "pet": "Cat",
-      "brand": "Pet food",
-      "tags": [
-        "dog food",
-        "parrot"
-      ]
+      "title": "Flea & Tick Shampoo",
+      "price": 21.50,
+      "image": "../assets/product/grooming/Shampoo/Shampoo8.jpg",
+      "category": "Grooming",
+      "pet": "Dog",
+      "brand": "Dog friend",
+      "tags": ["shampoo", "flea protection"]
     },
+    // GROOMING CATEGORY - Dental Care (5 products)
     {
       "id": "prod36",
-      "title": "Premium Cat Bowl",
-      "price": 29.57,
-      "image": "https://picsum.photos/seed/prod36/800/800",
-      "category": "Care",
-      "pet": "Rabbit",
+      "title": "Dog Toothbrush Kit",
+      "price": 9.99,
+      "image": "../assets/product/grooming/DentalCare/Teeth1.jpg",
+      "category": "Grooming",
+      "pet": "Dog",
       "brand": "Natural food",
-      "tags": [
-        "dog food",
-        "natural"
-      ]
+      "tags": ["dental care", "toothbrush"]
+    },
+    {
+      "id": "prod37",
+      "title": "Pet Dental Spray",
+      "price": 12.50,
+      "image": "../assets/product/grooming/DentalCare/Teeth2.jpg",
+      "category": "Grooming",
+      "pet": "Cat",
+      "brand": "Pet food",
+      "tags": ["dental care", "spray"]
+    },
+    {
+      "id": "prod38",
+      "title": "Dental Cleaning Set",
+      "price": 16.99,
+      "image": "../assets/product/grooming/DentalCare/Teeth3.jpg",
+      "category": "Grooming",
+      "pet": "Dog",
+      "brand": "Dog friend",
+      "tags": ["dental care", "cleaning"]
+    },
+    {
+      "id": "prod39",
+      "title": "Pet Toothpaste",
+      "price": 8.50,
+      "image": "../assets/product/grooming/DentalCare/Teeth4.jpg",
+      "category": "Grooming",
+      "pet": "Cat",
+      "brand": "Green line",
+      "tags": ["dental care", "toothpaste"]
+    },
+    {
+      "id": "prod40",
+      "title": "Complete Dental Kit",
+      "price": 24.99,
+      "image": "../assets/product/grooming/DentalCare/Teeth5.jpg",
+      "category": "Grooming",
+      "pet": "Dog",
+      "brand": "Natural food",
+      "tags": ["dental care", "complete kit"]
+    },
+    // GROOMING CATEGORY - Conditioner (3 products)
+    {
+      "id": "prod41",
+      "title": "Pet Conditioner",
+      "price": 13.99,
+      "image": "../assets/product/grooming/Conditioner/Condition1.jpg",
+      "category": "Grooming",
+      "pet": "Dog",
+      "brand": "Pet food",
+      "tags": ["conditioner", "soft coat"]
+    },
+    {
+      "id": "prod42",
+      "title": "Detangling Conditioner",
+      "price": 15.50,
+      "image": "../assets/product/grooming/Conditioner/Condition2.jpg",
+      "category": "Grooming",
+      "pet": "Cat",
+      "brand": "Natural food",
+      "tags": ["conditioner", "detangling"]
+    },
+    {
+      "id": "prod43",
+      "title": "Premium Pet Conditioner",
+      "price": 17.99,
+      "image": "../assets/product/grooming/Conditioner/Conditioner3.jpg",
+      "category": "Grooming",
+      "pet": "Dog",
+      "brand": "Green line",
+      "tags": ["conditioner", "premium"]
+    },
+    // GROOMING CATEGORY - Eye Care (3 products)
+    {
+      "id": "prod44",
+      "title": "Eye Cleaning Wipes",
+      "price": 8.99,
+      "image": "../assets/product/grooming/EyeCare/Eye1.jpg",
+      "category": "Grooming",
+      "pet": "Dog",
+      "brand": "Dog friend",
+      "tags": ["eye care", "wipes"]
+    },
+    {
+      "id": "prod45",
+      "title": "Tear Stain Remover",
+      "price": 11.50,
+      "image": "../assets/product/grooming/EyeCare/Eye2.jpg",
+      "category": "Grooming",
+      "pet": "Cat",
+      "brand": "Pet food",
+      "tags": ["eye care", "tear stain"]
+    },
+    {
+      "id": "prod46",
+      "title": "Eye Care Solution",
+      "price": 14.99,
+      "image": "../assets/product/grooming/EyeCare/Eye3.jpg",
+      "category": "Grooming",
+      "pet": "Dog",
+      "brand": "Natural food",
+      "tags": ["eye care", "solution"]
+    },
+    // GROOMING CATEGORY - Nail Care (2 products)
+    {
+      "id": "prod47",
+      "title": "Nail Clipper Set",
+      "price": 12.99,
+      "image": "../assets/product/grooming/NailCare/Kit1.jpg",
+      "category": "Grooming",
+      "pet": "Dog",
+      "brand": "Green line",
+      "tags": ["nail care", "clipper"]
+    },
+    {
+      "id": "prod48",
+      "title": "Complete Nail Care Kit",
+      "price": 18.50,
+      "image": "../assets/product/grooming/NailCare/Kit2.jpg",
+      "category": "Grooming",
+      "pet": "Cat",
+      "brand": "Pet food",
+      "tags": ["nail care", "complete kit"]
     }
   ]
 };

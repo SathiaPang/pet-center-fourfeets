@@ -2,7 +2,7 @@
 const allProducts = window.__DATA__.products || [];
 const categories = window.__DATA__.categories || [];
 
-// State management
+
 let filteredProducts = [...allProducts];
 let currentPage = 1;
 const productsPerPage = 9;
@@ -12,7 +12,6 @@ let selectedTags = [];
 let maxPrice = 100;
 let sortBy = 'latest';
 
-// Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
     initializeFilters();
     renderProducts();
@@ -21,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateFavCount();
 });
 
-// Initialize filters
+// filters
 function initializeFilters() {
     renderCategories();
     renderBrands();
@@ -29,11 +28,10 @@ function initializeFilters() {
     renderPopularProducts();
 }
 
-// Render categories
+// categories
 function renderCategories() {
     const catList = document.getElementById('catList');
     if (!catList) return;
-
     catList.innerHTML = categories.map(cat => `
         <li>
             <a href="#" class="category-filter" data-category="${cat.name}">
@@ -42,7 +40,6 @@ function renderCategories() {
         </li>
     `).join('');
 }
-
 // Render brands
 function renderBrands() {
     const brandList = document.getElementById('brandList');
@@ -86,31 +83,30 @@ function renderPopularProducts() {
         </div>
     `).join('');
 }
-
 // Apply filters
 function applyFilters() {
     filteredProducts = allProducts.filter(product => {
         // Category filter
         if (selectedCategory && product.category !== selectedCategory) return false;
-        
+
         // Brand filter
         if (selectedBrand && product.brand !== selectedBrand) return false;
-        
+
         // Tags filter
         if (selectedTags.length > 0) {
             const hasTag = selectedTags.some(tag => product.tags.includes(tag));
             if (!hasTag) return false;
         }
-        
+
         // Price filter
         if (product.price > maxPrice) return false;
-        
+
         return true;
     });
 
     // Apply sorting
     sortProducts();
-    
+
     // Reset to page 1
     currentPage = 1;
     renderProducts();
@@ -130,7 +126,7 @@ function sortProducts() {
 function renderProducts() {
     const productGrid = document.getElementById('productGrid');
     const resultLabel = document.getElementById('resultLabel');
-    
+
     if (!productGrid) return;
 
     // Calculate pagination
@@ -151,15 +147,19 @@ function renderProducts() {
 
     productGrid.innerHTML = productsToShow.map(product => `
         <div class="card card-compact bg-base-100 shadow-xl hover:shadow-2xl transition-shadow">
-            <figure class="aspect-square">
-                <img src="${product.image}" alt="${product.title}" class="w-full h-full object-cover" />
-            </figure>
+            <a href="product.html?id=${product.id}">
+                <figure class="aspect-square cursor-pointer">
+                    <img src="${product.image}" alt="${product.title}" class="w-full h-full object-cover" />
+                </figure>
+            </a>
             <div class="card-body">
-                <h2 class="card-title text-sm">${product.title}</h2>
+                <a href="product.html?id=${product.id}" class="hover:underline">
+                    <h2 class="card-title text-sm">${product.title}</h2>
+                </a>
                 <p class="font-bold text-primary">$${product.price.toFixed(2)}</p>
                 <div class="card-actions justify-end mt-2">
                     <button class="btn btn-sm btn-ghost add-to-fav-btn" data-product-id="${product.id}">❤️</button>
-                    <button class="btn btn-sm btn-primary add-to-cart-btn" data-product-id="${product.id}">Add to Cart</button>
+                    <button class="btn btn-sm btn-outline add-to-cart-btn" data-product-id="${product.id}">Add to Cart</button>
                 </div>
             </div>
         </div>
@@ -173,12 +173,12 @@ function renderProducts() {
 function updatePaginationButtons() {
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
-    
+
     if (prevBtn) {
         prevBtn.disabled = currentPage === 1;
         prevBtn.classList.toggle('btn-disabled', currentPage === 1);
     }
-    
+
     if (nextBtn) {
         const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
         nextBtn.disabled = currentPage >= totalPages;
@@ -194,12 +194,12 @@ function setupEventListeners() {
             e.preventDefault();
             const category = e.target.dataset.category;
             selectedCategory = selectedCategory === category ? null : category;
-            
+
             // Update active state
             document.querySelectorAll('.category-filter').forEach(el => {
                 el.classList.toggle('active', el.dataset.category === selectedCategory);
             });
-            
+
             applyFilters();
         }
     });
@@ -219,7 +219,7 @@ function setupEventListeners() {
         if (e.target.classList.contains('tag-filter')) {
             const tag = e.target.dataset.tag;
             const index = selectedTags.indexOf(tag);
-            
+
             if (index === -1) {
                 selectedTags.push(tag);
                 e.target.classList.add('badge-primary');
@@ -227,7 +227,7 @@ function setupEventListeners() {
                 selectedTags.splice(index, 1);
                 e.target.classList.remove('badge-primary');
             }
-            
+
             applyFilters();
         }
     });
@@ -235,7 +235,7 @@ function setupEventListeners() {
     // Price filter
     const priceRange = document.getElementById('priceRange');
     const priceLabel = document.getElementById('priceLabel');
-    
+
     if (priceRange) {
         priceRange.addEventListener('input', (e) => {
             maxPrice = parseFloat(e.target.value);
@@ -259,7 +259,7 @@ function setupEventListeners() {
     // Pagination
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
-    
+
     if (prevBtn) {
         prevBtn.addEventListener('click', () => {
             if (currentPage > 1) {
@@ -269,7 +269,7 @@ function setupEventListeners() {
             }
         });
     }
-    
+
     if (nextBtn) {
         nextBtn.addEventListener('click', () => {
             const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
@@ -315,7 +315,7 @@ function handleAddToCart(userEmail, productId, buttonElement) {
         userCart.push(productId);
         localStorage.setItem(cartKey, JSON.stringify(userCart));
         console.log(`Product ${productId} added to cart for ${userEmail}`);
-        
+
         buttonElement.textContent = 'Added';
         buttonElement.classList.add('btn-disabled');
         setTimeout(() => {
@@ -346,22 +346,21 @@ function handleAddToFavorites(userEmail, productId, buttonElement) {
     }
     updateFavCount();
 }
-
 // Update cart count
 function updateCartCount() {
     const loggedInUserEmail = sessionStorage.getItem('loggedInUser');
     if (!loggedInUserEmail) return;
-
     const cartKey = `cart_${loggedInUserEmail}`;
     const userCart = JSON.parse(localStorage.getItem(cartKey)) || [];
     const cartCount = userCart.length;
-
-    const cartButton = document.querySelector('.navbar-end .btn-ghost:nth-child(2)');
-    if (cartButton && cartCount > 0) {
-        cartButton.querySelector('span').innerHTML = `🛒 <span class="badge badge-sm badge-primary">${cartCount}</span>`;
+    // Find the cart button link (now it's an <a> tag)
+    const cartButtonSpan = document.querySelector('.navbar-end a[href="cart.html"] span');
+    if (cartButtonSpan && cartCount > 0) {
+        cartButtonSpan.innerHTML = `🛒 <span class="badge badge-sm badge-primary">${cartCount}</span>`;
+    } else if (cartButtonSpan) {
+        cartButtonSpan.innerHTML = '🛒';
     }
 }
-
 // Update favorites count
 function updateFavCount() {
     const loggedInUserEmail = sessionStorage.getItem('loggedInUser');
@@ -371,8 +370,11 @@ function updateFavCount() {
     const userFavorites = JSON.parse(localStorage.getItem(favKey)) || [];
     const favCount = userFavorites.length;
 
-    const favButton = document.querySelector('.navbar-end .btn-ghost:nth-child(1)');
-    if (favButton && favCount > 0) {
-        favButton.querySelector('span').innerHTML = `❤️ <span class="badge badge-sm badge-secondary">${favCount}</span>`;
+    // Find the favorites button link (now it's an <a> tag)
+    const favButtonSpan = document.querySelector('.navbar-end a[href="favorites.html"] span');
+    if (favButtonSpan && favCount > 0) {
+        favButtonSpan.innerHTML = `❤️ <span class="badge badge-sm badge-secondary">${favCount}</span>`;
+    } else if (favButtonSpan) {
+        favButtonSpan.innerHTML = '❤️';
     }
 }

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Log In - 4Feets</title>
+    <title>Your Cart - 4Feets</title>
     <link rel="icon" type="image/svg+xml" href="./assets/4Feets-Logo.svg">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.24/dist/full.min.css" rel="stylesheet" type="text/css" />
@@ -12,8 +12,9 @@
         rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
     <script>tailwind.config = { theme: { extend: { fontFamily: { sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'] } } } }</script>
-    <!-- Script JS Logic -->
-    <script type="module" src="./js/login.js"></script>
+    <!-- JS Scripts -->
+    <script src="./js/data.js"></script>
+    <script type="module" src="./js/cart.js"></script>
     <script type="module" src="./js/authStatus.js"></script>
 </head>
 
@@ -27,10 +28,10 @@
         </div>
         <div class="navbar-center hidden md:flex">
             <ul class="menu menu-horizontal px-1 font-medium">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="shop.html">Shop</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="index.html" class="">Home</a></li>
+                <li><a href="shop.html" class="">Shop</a></li>
+                <li><a href="about.html" class="">About</a></li>
+                <li><a href="contact.html" class="">Contact</a></li>
             </ul>
         </div>
         <div class="navbar-end gap-2">
@@ -40,37 +41,26 @@
             </div>
         </div>
     </div>
-    <section class="py-16 md:py-24">
-        <div class="max-w-md mx-auto px-4">
-            <div class="card bg-base-200 shadow-xl">
-                <div class="card-body">
-                    <h1 class="card-title text-3xl font-bold mb-6">Log In to Your Account</h1>
 
-                    <form id="login-form">
-                        <div class="form-control mb-4">
-                            <label class="label" for="email">
-                                <span class="label-text">Email Address</span>
-                            </label>
-                            <input type="email" id="email" placeholder="you@example.com"
-                                class="input input-bordered w-full" required />
-                        </div>
-                        <div class="form-control mb-6">
-                            <label class="label" for="password">
-                                <span class="label-text">Password</span>
-                            </label>
-                            <input type="password" id="password" placeholder="••••••••"
-                                class="input input-bordered w-full" required />
-                        </div>
-                        <div class="card-actions justify-end">
-                            <button type="submit" class="btn btn-primary w-full">Log In</button>
-                        </div>
-                    </form>
-                    <div class="divider my-4">Don't have an account?</div>
-                    <a href="signup.html" class="btn btn-outline w-full">Create Account Instead</a>
-                </div>
+    <section class="max-w-4xl mx-auto px-4 py-12 md:py-16">
+        <h1 class="text-3xl md:text-4xl font-extrabold mb-8">Your Shopping Cart</h1>
+
+        <div id="cart-items-container" class="space-y-4">
+        </div>
+
+        <div id="empty-cart-message" class="text-center py-10 hidden">
+            <p class="text-xl opacity-70 mb-4">Your cart is currently empty.</p>
+            <a href="shop.html" class="btn btn-primary">Continue Shopping</a>
+        </div>
+        <div id="cart-summary" class="mt-10 pt-6 border-t border-base-300 flex justify-end items-center">
+            <div class="text-right">
+                <p class="text-lg font-semibold">Subtotal: <span id="cart-total" class="text-primary">$0.00</span></p>
+                <p class="text-xs opacity-60">Shipping & taxes calculated at checkout.</p>
+                <button id="checkout-btn" class="btn btn-primary mt-4 w-full sm:w-auto">Proceed to Checkout</button>
             </div>
         </div>
     </section>
+
 </body>
 <footer class="bg-base-200 mt-16">
     <div class="max-w-7xl mx-auto px-4 py-12 grid md:grid-cols-4 gap-8">
