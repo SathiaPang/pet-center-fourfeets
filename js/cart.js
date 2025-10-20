@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Load and Display Cart ---
     loadCartItems();
 
-    // --- Add Event Listener for Remove Buttons (using delegation) ---
+    // --- Add Event Listener for Remove Buttons and Quantity Changes (using delegation) ---
     if (cartItemsContainer) {
         cartItemsContainer.addEventListener('click', (event) => {
             const targetButton = event.target.closest('button.remove-item-btn');
@@ -31,6 +31,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 const productId = targetButton.dataset.productId;
                 if (productId) {
                     removeItemFromCart(productId);
+                }
+            }
+
+            // Handle quantity increase
+            const increaseBtn = event.target.closest('button.increase-qty-btn');
+            if (increaseBtn) {
+                const productId = increaseBtn.dataset.productId;
+                if (productId) {
+                    updateQuantity(productId, 1);
+                }
+            }
+
+            // Handle quantity decrease
+            const decreaseBtn = event.target.closest('button.decrease-qty-btn');
+            if (decreaseBtn) {
+                const productId = decreaseBtn.dataset.productId;
+                if (productId) {
+                    updateQuantity(productId, -1);
                 }
             }
         });
@@ -52,10 +70,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const cartKey = `cart_${loggedInUserEmail}`;
-        const cartItemIds = JSON.parse(localStorage.getItem(cartKey)) || [];
+        let cartData = JSON.parse(localStorage.getItem(cartKey)) || {};
+
+        // Migration: Convert old array format to new object format
+        if (Array.isArray(cartData)) {
+            const oldArray = cartData;
+            cartData = {};
+            oldArray.forEach(id => {
+                cartData[id] = 1;
+            });
+            localStorage.setItem(cartKey, JSON.stringify(cartData));
+            console.log('Migrated cart from array to object format');
+        }
 
         // Clear previous items
         cartItemsContainer.innerHTML = '';
+
+        const cartItemIds = Object.keys(cartData);
 
         if (cartItemIds.length === 0) {
             // Show empty cart message and hide summary
@@ -71,10 +102,11 @@ document.addEventListener('DOMContentLoaded', () => {
             cartItemIds.forEach(itemId => {
                 // Find product details from the global allProducts array
                 const product = allProducts.find(p => p.id === itemId);
+                const quantity = cartData[itemId] || 1;
 
                 if (product) {
-                    total += product.price; // Add product price to total
-                    const itemElement = createCartItemElement(product);
+                    total += product.price * quantity; // Multiply by quantity
+                    const itemElement = createCartItemElement(product, quantity);
                     cartItemsContainer.appendChild(itemElement);
                 } else {
                     console.warn(`Product with ID ${itemId} not found in data.js`);
@@ -91,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- Function to create HTML for a single cart item ---
-    function createCartItemElement(product) {
+    function createCartItemElement(product, quantity) {
         const div = document.createElement('div');
         // Using DaisyUI card-side for layout
         div.className = 'card card-side bg-base-200 shadow-sm flex-col sm:flex-row';
@@ -101,13 +133,19 @@ document.addEventListener('DOMContentLoaded', () => {
             </figure>
             <div class="card-body py-4 px-6 flex-grow">
               <h2 class="card-title text-lg">${product.title}</h2>
-              <p class="text-primary font-semibold">$${product.price.toFixed(2)}</p>
+              <p class="text-primary font-semibold">$${product.price.toFixed(2)} each</p>
               <div class="card-actions justify-between items-center mt-2">
-                 <div>
-                    <span class="text-sm">Quantity: 1</span> 
+                 <div class="flex items-center gap-2">
+                    <span class="text-sm">Quantity:</span>
+                    <div class="join">
+                        <button class="btn btn-sm join-item decrease-qty-btn" data-product-id="${product.id}">−</button>
+                        <input type="text" value="${quantity}" class="input input-sm join-item w-16 text-center" readonly />
+                        <button class="btn btn-sm join-item increase-qty-btn" data-product-id="${product.id}">+</button>
+                    </div>
                  </div>
                  <button class="btn btn-sm btn-outline btn-error remove-item-btn" data-product-id="${product.id}">Remove</button>
               </div>
+              <p class="text-sm font-semibold mt-2">Subtotal: $${(product.price * quantity).toFixed(2)}</p>
             </div>
         `;
         return div;
@@ -116,13 +154,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Function to remove an item from the cart ---
     function removeItemFromCart(productIdToRemove) {
         const cartKey = `cart_${loggedInUserEmail}`;
-        let cartItemIds = JSON.parse(localStorage.getItem(cartKey)) || [];
+        let cartData = JSON.parse(localStorage.getItem(cartKey)) || {};
 
-        // Filter out the item to remove
-        const updatedCartIds = cartItemIds.filter(id => id !== productIdToRemove);
+        // Delete the item from the cart object
+        delete cartData[productIdToRemove];
 
-        // Save the updated array back to Local Storage
-        localStorage.setItem(cartKey, JSON.stringify(updatedCartIds));
+        // Save the updated object back to Local Storage
+        localStorage.setItem(cartKey, JSON.stringify(cartData));
 
         console.log(`Product ${productIdToRemove} removed from cart for ${loggedInUserEmail}`);
 
@@ -130,12 +168,33 @@ document.addEventListener('DOMContentLoaded', () => {
         loadCartItems();
     }
 
+    // --- Function to update quantity ---
+    function updateQuantity(productId, change) {
+        const cartKey = `cart_${loggedInUserEmail}`;
+        let cartData = JSON.parse(localStorage.getItem(cartKey)) || {};
+
+        if (cartData[productId]) {
+            cartData[productId] += change;
+
+            // Don't allow quantity to go below 1
+            if (cartData[productId] < 1) {
+                cartData[productId] = 1;
+            }
+
+            // Save the updated cart
+            localStorage.setItem(cartKey, JSON.stringify(cartData));
+
+            // Refresh the cart display
+            loadCartItems();
+        }
+    }
+
     // --- Function to handle checkout (Placeholder) ---
     function handleCheckout() {
         const cartKey = `cart_${loggedInUserEmail}`;
-        const cartItemIds = JSON.parse(localStorage.getItem(cartKey)) || [];
+        const cartData = JSON.parse(localStorage.getItem(cartKey)) || {};
 
-        if (cartItemIds.length === 0) {
+        if (Object.keys(cartData).length === 0) {
             alert("Your cart is empty!");
             return;
         }
@@ -156,8 +215,19 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!loggedInUserEmail) return;
 
         const cartKey = `cart_${loggedInUserEmail}`;
-        const userCart = JSON.parse(localStorage.getItem(cartKey)) || [];
-        const cartCount = userCart.length;
+        let cartData = JSON.parse(localStorage.getItem(cartKey)) || {};
+        
+        // Migration: Convert old array format to new object format
+        if (Array.isArray(cartData)) {
+            const oldArray = cartData;
+            cartData = {};
+            oldArray.forEach(id => {
+                cartData[id] = 1;
+            });
+            localStorage.setItem(cartKey, JSON.stringify(cartData));
+        }
+        
+        const cartCount = Object.keys(cartData).length;
 
         // Find the cart button link
         const cartButtonSpan = document.querySelector('.navbar-end a[href="cart.html"] span');

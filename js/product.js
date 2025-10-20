@@ -1,6 +1,3 @@
-// js/product.js
-
-// Get products from window.__DATA__ (loaded from data.js)
 const allProducts = window.__DATA__.products || [];
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -112,11 +109,23 @@ function updateFavoriteButtonState(productId, buttonElement) {
 // Handle add to cart
 function handleAddToCart(userEmail, productId, buttonElement) {
     const cartKey = `cart_${userEmail}`;
-    let userCart = JSON.parse(localStorage.getItem(cartKey)) || [];
+    let cartData = JSON.parse(localStorage.getItem(cartKey)) || {};
 
-    if (!userCart.includes(productId)) {
-        userCart.push(productId);
-        localStorage.setItem(cartKey, JSON.stringify(userCart));
+    // Migration: Convert old array format to new object format
+    if (Array.isArray(cartData)) {
+        const oldArray = cartData;
+        cartData = {};
+        oldArray.forEach(id => {
+            cartData[id] = 1;
+        });
+        localStorage.setItem(cartKey, JSON.stringify(cartData));
+        console.log('Migrated cart from array to object format');
+    }
+
+    if (!cartData[productId]) {
+        // Add product with quantity 1
+        cartData[productId] = 1;
+        localStorage.setItem(cartKey, JSON.stringify(cartData));
         console.log(`Product ${productId} added to cart for ${userEmail}`);
 
         // Update button
@@ -132,7 +141,23 @@ function handleAddToCart(userEmail, productId, buttonElement) {
         // Update navbar count
         updateCartCount();
     } else {
-        alert('This item is already in your cart!');
+        // Increase quantity if already in cart
+        cartData[productId]++;
+        localStorage.setItem(cartKey, JSON.stringify(cartData));
+        console.log(`Product ${productId} quantity increased to ${cartData[productId]} for ${userEmail}`);
+        
+        // Update button
+        const originalText = buttonElement.textContent;
+        buttonElement.textContent = 'Added to Cart!';
+        buttonElement.classList.add('btn-disabled');
+        
+        setTimeout(() => {
+            buttonElement.textContent = originalText;
+            buttonElement.classList.remove('btn-disabled');
+        }, 2000);
+
+        // Update navbar count
+        updateCartCount();
     }
 }
 
@@ -171,8 +196,19 @@ function updateCartCount() {
     if (!loggedInUserEmail) return;
 
     const cartKey = `cart_${loggedInUserEmail}`;
-    const userCart = JSON.parse(localStorage.getItem(cartKey)) || [];
-    const cartCount = userCart.length;
+    let cartData = JSON.parse(localStorage.getItem(cartKey)) || {};
+    
+    // Migration: Convert old array format to new object format
+    if (Array.isArray(cartData)) {
+        const oldArray = cartData;
+        cartData = {};
+        oldArray.forEach(id => {
+            cartData[id] = 1;
+        });
+        localStorage.setItem(cartKey, JSON.stringify(cartData));
+    }
+    
+    const cartCount = Object.keys(cartData).length;
 
     const cartButtonSpan = document.querySelector('.navbar-end a[href="cart.html"] span');
     if (cartButtonSpan && cartCount > 0) {

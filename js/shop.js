@@ -309,11 +309,23 @@ function setupEventListeners() {
 // Handle add to cart
 function handleAddToCart(userEmail, productId, buttonElement) {
     const cartKey = `cart_${userEmail}`;
-    let userCart = JSON.parse(localStorage.getItem(cartKey)) || [];
+    let cartData = JSON.parse(localStorage.getItem(cartKey)) || {};
 
-    if (!userCart.includes(productId)) {
-        userCart.push(productId);
-        localStorage.setItem(cartKey, JSON.stringify(userCart));
+    // Migration: Convert old array format to new object format
+    if (Array.isArray(cartData)) {
+        const oldArray = cartData;
+        cartData = {};
+        oldArray.forEach(id => {
+            cartData[id] = 1;
+        });
+        localStorage.setItem(cartKey, JSON.stringify(cartData));
+        console.log('Migrated cart from array to object format');
+    }
+
+    if (!cartData[productId]) {
+        // Add product with quantity 1
+        cartData[productId] = 1;
+        localStorage.setItem(cartKey, JSON.stringify(cartData));
         console.log(`Product ${productId} added to cart for ${userEmail}`);
 
         buttonElement.textContent = 'Added';
@@ -323,7 +335,17 @@ function handleAddToCart(userEmail, productId, buttonElement) {
             buttonElement.classList.remove('btn-disabled');
         }, 1500);
     } else {
-        alert('Item already in cart!');
+        // Increase quantity if already in cart
+        cartData[productId]++;
+        localStorage.setItem(cartKey, JSON.stringify(cartData));
+        console.log(`Product ${productId} quantity increased to ${cartData[productId]} for ${userEmail}`);
+        
+        buttonElement.textContent = 'Added';
+        buttonElement.classList.add('btn-disabled');
+        setTimeout(() => {
+            buttonElement.textContent = 'Add to Cart';
+            buttonElement.classList.remove('btn-disabled');
+        }, 1500);
     }
     updateCartCount();
 }
@@ -351,8 +373,19 @@ function updateCartCount() {
     const loggedInUserEmail = sessionStorage.getItem('loggedInUser');
     if (!loggedInUserEmail) return;
     const cartKey = `cart_${loggedInUserEmail}`;
-    const userCart = JSON.parse(localStorage.getItem(cartKey)) || [];
-    const cartCount = userCart.length;
+    let cartData = JSON.parse(localStorage.getItem(cartKey)) || {};
+    
+    // Migration: Convert old array format to new object format
+    if (Array.isArray(cartData)) {
+        const oldArray = cartData;
+        cartData = {};
+        oldArray.forEach(id => {
+            cartData[id] = 1;
+        });
+        localStorage.setItem(cartKey, JSON.stringify(cartData));
+    }
+    
+    const cartCount = Object.keys(cartData).length;
     // Find the cart button link (now it's an <a> tag)
     const cartButtonSpan = document.querySelector('.navbar-end a[href="cart.html"] span');
     if (cartButtonSpan && cartCount > 0) {
